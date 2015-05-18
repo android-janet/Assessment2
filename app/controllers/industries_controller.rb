@@ -10,6 +10,7 @@ def new
 end
 
 def create
+  @company = Company.find_by_id(params[:company_id])
   @industry = Industry.new(industry_params)
   @industry.id
   if @industry.save
@@ -21,17 +22,17 @@ def create
 end
 
 def show
-  @industry = Industry.find(params[:id])
   @company = Company.find_by_id(params[:company_id])
+  @industry = Industry.find(params[:id])
 end
 
 def edit
-  @industry = Industry.find_by_id(params[:id])
+  @industry = Industry.find(params[:id])
 end
 
 def update
-  @industry = Industry.find_by_id(params[:id])
-
+  @company = Company.find_by_id(params[:company_id])
+  @industry = Industry.find(params[:id])
   if @industry.update(industry_params)
     flash[:notice] = "INDUSTRY WAS UPDATED SUCCESSFULLY."
     redirect_to industries_path
@@ -41,7 +42,7 @@ def update
 end
 
 def destroy
-  @industry = Industry.find_by_id(params[:id])
+  @industry = Industry.find(params[:id])
   @industry.destroy
   redirect_to industries_path
   flash[:notice] = "INDUSTRY WAS DELETED."
@@ -51,7 +52,7 @@ end
 
 private
 def industry_params
-  params.require(:industry).permit(:name, :description)
+  params.require(:industry).permit(:name, :description, :company_id)
 end
 
 end

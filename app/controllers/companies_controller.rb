@@ -9,7 +9,7 @@ def new
 end
 
 def create
-  @industry = Industry.find_by_id(params[:id])
+  @industry = Industry.find_by_id(params[:industry_id])
   @company = Company.new(company_params)
   @company.id
   if @company.save
@@ -22,14 +22,16 @@ end
 
 def show
   @company = Company.find(params[:id])
-  @industry = Industry.find(params[:industry_id])
+  @industry = Industry.find_by_id(params[:industry_id])
 end
 
 def edit
+  @industry = Industry.find_by_id(params[:industry_id])
   @company = Company.find_by_id(params[:id])
 end
 
 def update
+  @industry = Industry.find_by_id(params[:industry_id])
   @company = Company.find_by_id(params[:id])
 
   if @company.update(company_params)

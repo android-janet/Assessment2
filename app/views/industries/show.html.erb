@@ -33,8 +33,9 @@
     </th>
   </tr>
 
-<% unless @company_id == nil %>
+
   <tr>
+    <% unless @company == nil %>
     <td>
       <%= @company.name %>
     </td>
@@ -42,7 +43,7 @@
 
     </td>
     <td>
-      data
+      <%= @company.industry.name %>
     </td>
     <td>
 

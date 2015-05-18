@@ -28,16 +28,16 @@
     </th>
   </tr>
 
-
+<% unless @industry_id == nil %>
   <tr>
     <td>
-      <%= @industry.name %>
+      <%= @industry.company.name %>
     </td>
     <td>
-      data
     </td>
     <td>
-
+      <%= @industry.description %>
     </td>
   </tr>
+  <% end %>
 </table>
