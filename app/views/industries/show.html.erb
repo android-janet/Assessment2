@@ -7,29 +7,39 @@
 
 <em><h2> About </h2></em>
 <strong> <h3> Name: </h3> </strong>
+<%= @industry.name %>
 <strong> <h3> Description: </h3> </strong>
+<%= @industry.description %>
 <strong> <h3> Date/Time Created: </h3> </strong>
+<%= @industry.created_at %>
 <strong> <h3> Date/Time Last Updated: </h3> </strong>
+<%= @industry.updated_at %>
 
 <em><h2> Companies in This Industry </h2></em>
 
 <table>
   <tr>
     <th>
-      co name
+      Co. Name
     </th>
     <th>
-      co name
+
+    </th>
+    <th>
+      Co. Description
     </th>
     <th>
 
     </th>
   </tr>
 
-
+<% unless @company_id == nil %>
   <tr>
     <td>
-      data
+      <%= @company.name %>
+    </td>
+    <td>
+
     </td>
     <td>
       data
@@ -38,4 +48,5 @@
 
     </td>
   </tr>
+  <% end %>
 </table>

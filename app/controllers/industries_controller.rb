@@ -21,7 +21,8 @@ def create
 end
 
 def show
-  @industry = Industry.find_by_id(params[:id])
+  @industry = Industry.find(params[:id])
+  @company = Company.find_by_id(params[:company_id])
 end
 
 def edit
