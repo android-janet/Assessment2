@@ -1,0 +1,19 @@
+<h1> List of Industries </h1>
+
+<hr>
+
+<table>
+  <% @industries.each do |industry| %>
+  <tr>
+    <th>
+      <%= link_to industry.name, industry_path(industry) %>
+    </th>
+    <th>
+      <%= industry.created_at %>
+    </th>
+    <th>
+      <%= industry.updated_at %>
+    </th>
+  </tr>
+  <% end %>
+</table>
