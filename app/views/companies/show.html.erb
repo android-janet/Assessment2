@@ -1,0 +1,43 @@
+<h1> COMPANY SHOW PAGE </h2>
+
+  <%= link_to 'Edit Company', edit_company_path %>
+  <%= link_to("Delete Company", @company, :method => :delete, :class => 'action', data: {confirm: "Are you sure?"}) %>
+
+
+<hr>
+
+<em><h2> About </h2></em>
+<strong> <h3> Name: </h3> </strong>
+<strong> <h3> Description: </h3> </strong>
+<strong> <h3> Price: </h3> </strong>
+<strong> <h3> Date/Time Created: </h3> </strong>
+<strong> <h3> Date/Time Last Updated: </h3> </strong>
+
+<em><h2> Industries That This Company is a Part Of </h2></em>
+
+<table>
+  <tr>
+    <th>
+      industry name
+    </th>
+    <th>
+      industry name
+    </th>
+    <th>
+
+    </th>
+  </tr>
+
+
+  <tr>
+    <td>
+      data
+    </td>
+    <td>
+      data
+    </td>
+    <td>
+
+    </td>
+  </tr>
+</table>

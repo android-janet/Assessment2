@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 root 'welcome#index'
-resources :industries do
-  resources :companies
-end
+resources :industries
+resources :companies
 
 
 

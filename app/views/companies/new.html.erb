@@ -1,8 +1,9 @@
-<h1> Create a new industry </h1>
+<h1> Create a new company </h1>
 
 <hr>
 
-<%= form_for @industry do |f| %>
+
+<%= form_for @company do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
@@ -10,5 +11,11 @@
 
 <%= f.label :description %>
 <%= f.text_area :description %>
+
+<br>
+
+<%= f.label :price %>
+<%= f.number_field :price %>
+
 <%= f.submit 'Create' %>
 <% end %>

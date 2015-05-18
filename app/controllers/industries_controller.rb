@@ -17,6 +17,10 @@ def create
   end
 end
 
+def show
+  @industry = Industry.find_by_id(params[:id])
+end
+
 def update
   @industry = Industry.find_by_id(params[:id])
   if @industry.save
@@ -28,8 +32,8 @@ def update
 end
 
 def destroy
-  @industry = Industry.find(params[:id])
-  @industry.delete
+  @industry = Industry.find_by_id(params[:id])
+  @industry.destroy
   redirect_to industries_path
   flash[:notice] = "INDUSTRY WAS DELETED."
 end

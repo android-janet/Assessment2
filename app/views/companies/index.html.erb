@@ -1,0 +1,22 @@
+<h1>  ALL THE COMPANIES EVER CREATED! </h1>
+
+<hr>
+
+<table>
+  <% @companies.each do |company| %>
+  <tr>
+    <th>
+      <%= link_to company.name, company_path(company) %>
+    </th>
+    <th>
+      <%= company.price %>
+    </th>
+    <th>
+      <%= company.created_at %>
+    </th>
+    <th>
+      <%= company.updated_at %>
+    </th>
+  </tr>
+  <% end %>
+</table>
