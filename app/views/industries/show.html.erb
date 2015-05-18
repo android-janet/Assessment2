@@ -3,6 +3,7 @@
 <%= link_to 'Edit Industry', edit_industry_path(@industry) %>
 <%= link_to("Delete Industry", @industry, :method => :delete, :class => 'action', data: {confirm: "Are you sure?"}) %>
 
+
 <hr>
 
 <em><h2> About </h2></em>
@@ -29,25 +30,21 @@
       Co. Description
     </th>
     <th>
-
+      Co. Price
     </th>
   </tr>
 
-
-  <tr>
-    <% unless @company == nil %>
+<tr>
     <td>
-      <%= @company.name %>
+      <%= @industry.company_id %>
     </td>
     <td>
 
     </td>
     <td>
-      <%= @company.industry.name %>
     </td>
     <td>
 
     </td>
   </tr>
-  <% end %>
 </table>

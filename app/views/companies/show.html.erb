@@ -1,42 +1,42 @@
 <h1> COMPANY SHOW PAGE </h2>
 
-  <%= link_to 'Edit Company', edit_company_path %>
+  <%= link_to 'Edit Company', edit_company_path(@company) %>
   <%= link_to("Delete Company", @company, :method => :delete, :class => 'action', data: {confirm: "Are you sure?"}) %>
 
 
 <hr>
 
 <em><h2> About </h2></em>
-<strong> <h3> Name: </h3> </strong>
-<strong> <h3> Description: </h3> </strong>
-<strong> <h3> Price: </h3> </strong>
-<strong> <h3> Date/Time Created: </h3> </strong>
-<strong> <h3> Date/Time Last Updated: </h3> </strong>
+<strong> <h3> Name: </h3> </strong> <%= @company.name %>
+<strong> <h3> Description: </h3> </strong> <%= @company.description %>
+<strong> <h3> Price: </h3> </strong> <%= @company.price %>
+<strong> <h3> Date/Time Created: </h3> </strong> <%= @company.created_at %>
+<strong> <h3> Date/Time Last Updated: </h3> </strong> <%= @company.updated_at %>
 
 <em><h2> Industries That This Company is a Part Of </h2></em>
 
 <table>
   <tr>
     <th>
-      industry name
+      Industry Name
     </th>
     <th>
-      industry name
+    </th>
+    <th>
+      Description
     </th>
     <th>
 
     </th>
   </tr>
 
-<% unless @industry_id == nil %>
+  <% unless [@industry, @company] == nil %>
   <tr>
     <td>
-      <%= @industry.company.name %>
     </td>
     <td>
     </td>
     <td>
-      <%= @industry.description %>
     </td>
   </tr>
   <% end %>
