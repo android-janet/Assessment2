@@ -1,7 +1,8 @@
-<h1> Create a new industry </h1>
+<h1> Edit Industry </h1>
 
 <hr>
-<%= form_for @industry do |f| %>
+
+<%= form_for Industry.new do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
@@ -9,5 +10,5 @@
 
 <%= f.label :description %>
 <%= f.text_field :description %>
-<%= f.submit 'Create' %>
+<%= f.submit 'Update' %>
 <% end %>

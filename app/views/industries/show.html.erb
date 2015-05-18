@@ -1,13 +1,18 @@
 <h1> INDUSTRY SHOW PAGE </h1>
 
+<%= link_to 'Edit Industry', edit_industry_path %>
+<%= link_to("Delete Industry", @industry, :method => :delete, :class => 'action') %>
+
 <hr>
 
+<em><h2> About </h2></em>
 <strong> <h3> Name: </h3> </strong>
 <strong> <h3> Description: </h3> </strong>
 <strong> <h3> Date/Time Created: </h3> </strong>
 <strong> <h3> Date/Time Last Updated: </h3> </strong>
 
-<h2> Companies in This Industry </h2>
+<em><h2> Companies in This Industry </h2></em>
+
 <table>
   <tr>
     <th>
@@ -15,6 +20,9 @@
     </th>
     <th>
       co name
+    </th>
+    <th>
+
     </th>
   </tr>
 
@@ -25,6 +33,9 @@
     </td>
     <td>
       data
+    </td>
+    <td>
+
     </td>
   </tr>
 </table>
