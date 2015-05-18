@@ -10,7 +10,7 @@
 <strong> <h3> Name: </h3> </strong> <%= @company.name %>
 <strong> <h3> Description: </h3> </strong> <%= @company.description %>
 <strong> <h3> Price: </h3> </strong> <%= @company.price %>
-<strong> <h3> Date/Time Created: </h3> </strong> <%= @company.created_at %>
+<strong> <h3> Date/Time Created: </h3> </strong> <%= @company.created_at.strftime "%d-%m-%Y %H:%M:%S" %>
 <strong> <h3> Date/Time Last Updated: </h3> </strong> <%= @company.updated_at %>
 
 <em><h2> Industries That This Company is a Part Of </h2></em>
@@ -30,14 +30,13 @@
     </th>
   </tr>
 
-  <% unless [@industry, @company] == nil %>
   <tr>
     <td>
+      <%= @company.industry_id %>
     </td>
     <td>
     </td>
     <td>
     </td>
   </tr>
-  <% end %>
 </table>
