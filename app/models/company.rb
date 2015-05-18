@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
 
-has_many :industries
+has_and_belongs_to_many :industries
 
 end

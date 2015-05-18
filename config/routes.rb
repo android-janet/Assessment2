@@ -7,6 +7,9 @@ root 'welcome#index'
 resources :industries
 resources :companies
 
+resources :industries do
+  resources :companies
+end
 
 
   # Example of regular route:

@@ -3,7 +3,12 @@
 <hr>
 
 
-<%= form_for @company do |f| %>
+<%= form_for [@industry, @company] do |f| %>
+
+<%= select("company", "industry_id", Industry.all.collect {|p| [p.name, p.id ] }, {prompt: 'Select Industry'}, include_blank: true) %>
+
+<br>
+
 <%= f.label :name %>
 <%= f.text_field :name %>
 

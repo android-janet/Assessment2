@@ -1,6 +1,8 @@
 class IndustriesController < ApplicationController
 def index
   @industries = Industry.all
+  @companies = Company.all
+  @company = Company.find_by_id(params[:company_id])
 end
 
 def new
@@ -9,6 +11,7 @@ end
 
 def create
   @industry = Industry.new(industry_params)
+  @industry.id
   if @industry.save
     flash[:notice] = "INDUSTRY WAS CREATED SUCCESSFULLY."
     redirect_to industry_path(@industry)

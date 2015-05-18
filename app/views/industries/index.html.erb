@@ -14,24 +14,30 @@
       Updated At
     </th>
   </tr>
+
+
   <% @industries.each do |industry| %>
   <tr>
     <td>
       <%= link_to industry.name, industry_path(industry) %>
     </td>
     <td>
-      <%= industry.created_at %>
+      <%= industry.created_at   %>
     </td>
     <td>
       <%= industry.updated_at %>
     </td>
   </tr>
+<% end %>
 
+<% @industries.each do |industry| %>
+<% @companies.each do |company| %>
   <tr>
     <td>
-      companies in the industry above
+      <%= industry. %>
     </td>
   </tr>
+  <% end %>
   <% end %>
 
 </table>
