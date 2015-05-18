@@ -22,10 +22,10 @@
       <%= link_to industry.name, industry_path(industry) %>
     </td>
     <td>
-      <%= industry.created_at.strftime "%d-%m-%Y  %H:%M:%S" %>
+      <%= industry.created_at.strftime "%m-%d-%Y  %H:%M:%S" %>
     </td>
     <td>
-      <%= industry.updated_at.strftime "%d-%m-%Y  %H:%M:%S" %>
+      <%= industry.updated_at.strftime "%m-%d-%Y  %H:%M:%S" %>
     </td>
   </tr>
 <% end %>
