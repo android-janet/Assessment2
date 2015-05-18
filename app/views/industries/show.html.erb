@@ -1,6 +1,6 @@
 <h1> INDUSTRY SHOW PAGE </h1>
 
-<%= link_to 'Edit Industry', edit_industry_path %>
+<%= link_to 'Edit Industry', edit_industry_path(@industry) %>
 <%= link_to("Delete Industry", @industry, :method => :delete, :class => 'action', data: {confirm: "Are you sure?"}) %>
 
 <hr>

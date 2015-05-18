@@ -5,18 +5,22 @@
 <table>
   <% @industries.each do |industry| %>
   <tr>
-    <th>
+    <td>
       <%= link_to industry.name, industry_path(industry) %>
-    </th>
-    <th>
+    </td>
+    <td>
       <%= industry.created_at %>
-    </th>
-    <th>
+    </td>
+    <td>
       <%= industry.updated_at %>
-    </th>
+    </td>
+  </tr>
+
+  <tr>
     <th>
-      Companies
+      <%= industry. %>
     </th>
   </tr>
   <% end %>
+
 </table>

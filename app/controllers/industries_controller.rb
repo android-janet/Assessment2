@@ -21,13 +21,18 @@ def show
   @industry = Industry.find_by_id(params[:id])
 end
 
+def edit
+  @industry = Industry.find_by_id(params[:id])
+end
+
 def update
   @industry = Industry.find_by_id(params[:id])
-  if @industry.save
+
+  if @industry.update(industry_params)
     flash[:notice] = "INDUSTRY WAS UPDATED SUCCESSFULLY."
     redirect_to industries_path
   else
-    render :edit
+    render 'edit'
   end
 end
 
