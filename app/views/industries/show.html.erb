@@ -7,14 +7,18 @@
 <hr>
 
 <em><h2> About </h2></em>
+
 <strong> <h3> Name: </h3> </strong>
 <%= @industry.name %>
+
 <strong> <h3> Description: </h3> </strong>
 <%= @industry.description %>
+
 <strong> <h3> Date/Time Created: </h3> </strong>
-<%= @industry.created_at.strftime "%m-%d-%Y %H:%M:%S" %>
+<%= @industry.created_at.strftime "%m-%d-%Y   %H:%M:%S" %>
+
 <strong> <h3> Date/Time Last Updated: </h3> </strong>
-<%= @industry.updated_at.strftime "%m-%d-%Y %H:%M:%S" %>
+<%= @industry.updated_at.strftime "%m-%d-%Y   %H:%M:%S" %>
 
 <em><h2> Companies in This Industry </h2></em>
 
@@ -34,18 +38,20 @@
     </th>
   </tr>
 
-  <% @person.addresses.each do |address| %>
-<tr>
+  <% @industry.companies.each do |company| %>
+  <tr>
     <td>
-      <%= @industry.companies.each do | %>
+      <%= company.name %>
+    </td>
+    <td>
+      <%= company.description %>
     </td>
     <td>
 
     </td>
     <td>
-    </td>
-    <td>
-
+      <%= company.price %>
     </td>
   </tr>
+  <% end %>
 </table>
