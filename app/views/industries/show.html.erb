@@ -38,16 +38,18 @@
     </th>
   </tr>
 
+  <%= @industry.companies.collect(&:name).join(",") %>
+
   <% @industry.companies.each do |company| %>
   <tr>
     <td>
       <%= company.name %>
     </td>
     <td>
-      <%= company.description %>
+
     </td>
     <td>
-
+      <%= company.description %>
     </td>
     <td>
       <%= company.price %>

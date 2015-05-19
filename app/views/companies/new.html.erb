@@ -2,25 +2,36 @@
 
 <hr>
 
+<% if @company.errors.any? %>
+<h2><%= pluralize(@company.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+<ul>
+  <% @company.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
 
 <%= form_for @company do |f| %>
 
-<%= collection_select :industry, :industry_id, Industry.all, :id, :name, :prompt => 'Select Industry', :multiple => true %>
+  <%= f.label :industry_id, 'Industries' %>
+  <%= collection_select @industry, :industry_id, Industry.all, :id, :name, :prompt => 'Select Industry', :multiple => true %>
 
-<br>
+  <br>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-<br>
+  <br>
 
-<%= f.label :description %>
-<%= f.text_area :description %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
 
-<br>
+  <br>
 
-<%= f.label :price %>
-<%= f.number_field :price %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
 
-<%= f.submit 'Create' %>
-<% end %>
+  <%= f.submit 'Create' %>
+  <% end %>

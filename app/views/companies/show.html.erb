@@ -26,17 +26,19 @@
       Description
     </th>
     <th>
-
     </th>
   </tr>
 
+<% @company.industries.each do |industry| %>
   <tr>
     <td>
-      <%= @company.industry_id %>
+      <%= industry.name %>
     </td>
     <td>
     </td>
     <td>
+      <%= industry.description %>
     </td>
   </tr>
+  <% end %>
 </table>

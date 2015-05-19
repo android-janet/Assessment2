@@ -4,14 +4,15 @@ def index
 end
 
 def new
-  @industry = Industry.find_by_id(params[:id])
   @company = Company.new
+  @industry = Industry.find_by_id(params[:industry_id])
+  @industries = Industry.all
 end
 
 def create
   @industry = Industry.find_by_id(params[:industry_id])
   @company = Company.new(company_params)
-  @company.id
+  @company.industries << @industry
   if @company.save
     flash[:notice] = "COMPANY WAS CREATED SUCCESSFULLY."
     redirect_to company_path(@company)
@@ -52,7 +53,7 @@ end
 
 private
 def company_params
-  params.require(:company).permit(:name, :description, :price, :industry_id)
+  params.require(:company).permit(:name, :description, :price, {:industry_id => []})
 end
 
 end
