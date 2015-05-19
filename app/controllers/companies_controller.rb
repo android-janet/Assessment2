@@ -28,12 +28,13 @@ end
 
 def edit
   @industry = Industry.find_by_id(params[:industry_id])
-  @company = Company.find_by_id(params[:id])
+  @company = Company.find(params[:id])
 end
 
 def update
   @industry = Industry.find_by_id(params[:industry_id])
-  @company = Company.find_by_id(params[:id])
+  @company = Company.find(params[:id])
+  @industries = Industry.all
   @company.industries << @industry
   if @company.update(company_params)
     flash[:notice] = "COMPANY WAS UPDATED SUCCESSFULLY."
@@ -44,7 +45,7 @@ def update
 end
 
 def destroy
-  @company = Company.find_by_id(params[:id])
+  @company = Company.find(params[:id])
   @company.destroy
   redirect_to companies_path
   flash[:notice] = "COMPANY WAS DELETED."
@@ -53,7 +54,7 @@ end
 
 private
 def company_params
-  params.require(:company).permit(:name, :description, :price, {:industry_id => []})
+  params.require(:company).permit(:name, :description, :price)
 end
 
 end

@@ -52,7 +52,7 @@ end
 
 private
 def industry_params
-  params.require(:industry).permit(:name, :description, :company_id)
+  params.require(:industry).permit(:name, :description)
 end
 
 end
