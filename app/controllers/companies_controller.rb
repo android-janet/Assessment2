@@ -23,7 +23,6 @@ end
 def show
   @company = Company.find(params[:id])
   @industry = Industry.find_by_id(params[:industry_id])
-  
 end
 
 def edit
