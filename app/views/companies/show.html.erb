@@ -3,6 +3,9 @@
   <%= link_to 'Edit Company', edit_company_path(@company) %>
   <%= link_to("Delete Company", @company, :method => :delete, :class => 'action', data: {confirm: "Are you sure?"}) %>
 
+  <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
 
 <hr>
 

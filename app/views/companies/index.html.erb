@@ -1,5 +1,10 @@
 <h1>  ALL THE COMPANIES EVER CREATED! </h1>
 <%= link_to 'Add a New Company', new_company_path %>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
 <hr>
 
 <table>
@@ -14,7 +19,7 @@
       Created At
     </th>
     <th>
-      
+
     </th>
     <th>
       Updated At

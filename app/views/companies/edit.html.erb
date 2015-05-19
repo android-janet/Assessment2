@@ -2,6 +2,17 @@
 
 <hr>
 
+<% if @company.errors.any? %>
+<h2><%= pluralize(@company.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+<ul>
+  <% @company.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
 
 <%= form_for @company do |f| %>
 
