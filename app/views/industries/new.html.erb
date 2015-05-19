@@ -2,9 +2,7 @@
 
 <hr>
 
-<%= form_for [@company, @industry] do |f| %>
-
-<%= select("industry", "company_id", Company.all.collect {|p| [p.name, p.id ] }, {prompt: 'Select Company'}, include_blank: true) %>
+<%= form_for @industry do |f| %>
 
 <br>
 
@@ -17,8 +15,6 @@
 <%= f.text_area :description %>
 
 <br>
-
-
 
 <%= f.submit 'Create' %>
 <% end %>
