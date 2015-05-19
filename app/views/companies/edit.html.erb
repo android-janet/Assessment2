@@ -2,24 +2,26 @@
 
 <hr>
 
-<%= form_for [@industry, @company] do |f| %>
 
-<%= select("company", "industry_id", Industry.all.collect {|p| [p.name, p.id ] }, {prompt: 'Select Industry'}, include_blank: true) %>
+<%= form_for @company do |f| %>
 
-<br>
+  <%= f.label :industry_id, 'Industries' %>
+  <%= collection_select @industry, :industry_id, Industry.all, :id, :name, :prompt => 'Select Industry', :multiple => true %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+  <br>
 
-<br>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-<%= f.label :description %>
-<%= f.text_area :description %>
+  <br>
 
-<br>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
 
-<%= f.label :price %>
-<%= f.number_field :price %>
+  <br>
 
-<%= f.submit 'Update' %>
-<% end %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+  <%= f.submit 'Update' %>
+  <% end %>

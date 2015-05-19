@@ -34,7 +34,7 @@ end
 def update
   @industry = Industry.find_by_id(params[:industry_id])
   @company = Company.find_by_id(params[:id])
-
+  @company.industries << @industry
   if @company.update(company_params)
     flash[:notice] = "COMPANY WAS UPDATED SUCCESSFULLY."
     redirect_to companies_path
