@@ -28,16 +28,14 @@
       <%= industry.updated_at.strftime "%m-%d-%Y  %H:%M:%S" %>
     </td>
   </tr>
-<% end %>
 
-<% @industries.each do |industry| %>
-<% @companies.each do |company| %>
+  <% industry.companies.each do |company| %>
   <tr>
     <td>
-
+      <%= company.name %>
     </td>
+    <% end %>
   </tr>
-  <% end %>
   <% end %>
 
 </table>
